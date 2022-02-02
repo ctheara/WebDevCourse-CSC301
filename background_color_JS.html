@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title> HW #3, Question 1 </title>
+  
+<style>
+
+  div#description {
+    padding: 5px;
+  }
+  
+  button {
+    box-sizing: content-box
+  }
+  
+  
+</style>
+
+</head>
+
+<body>
+  
+  <h1 id = "title"> Homework #3, Question 1 </h1>
+
+  <div id = "description">
+     
+    <p>Use JavaScript to change the background color and text color of this div when 
+     a user types a color in the corresponding textbox. In order to do this, you
+     should respond to the <i>onkeyup</i> event for each textbox. </p> 
+    
+     <p>Additionally, allow the user to add a border by clicking the button. You can
+     use a style of your choice, such as "2px solid red", as long as the border is visible</p>
+   
+     <p> Finally, clicking the "Reset" button should reset the styles and inputs to their default values, 
+     which are "white" for the background color and "black" for the font color, with the border style 
+       set to "none". </p>
+  </div>
+  
+  <br>
+  <hr>
+
+<div class = "color-inputs">
+<label for = "bgcolor">background-color: </label>
+<input type = "text" name="bgcolor" id="bgcolor" value = "white">
+
+</div>
+  
+<div class = "color-inputs">
+<label for = "textcolor">font color: </label>
+<input type = "text" value = "black" name="textcolor" id="textcolor"/>
+</div>
+
+<div class = "color-inputs">
+  <button>Add border </button>
+</div>
+
+<div class = "color-inputs">
+  <button>Reset </button>
+</div>
+
+
+  <br><br>
+
+
+</body>
+
+</html>
+
+
