@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)https://gdancik.github.io/CSC-301/data/hw/products_js.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title> Hints for HW #3 </title>
+
+<style>
+
+.header {
+	color: rgb(124,33,40)
+}
+
+.desc {
+	font-family: "Courier New";
+	font-style: italic;
+	font-weight: bold;
+}
+
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+table {
+	width:80%;
+}
+
+td {
+	padding: 2px;
+	text-align: center;
+}
+
+
+tr:hover td {
+	background-color: yellow;
+}
+
+
+p.reveal {
+	display:none
+}
+
+td:hover p.reveal {
+	position: fixed;
+	margin: 3px;
+	padding: 5px;
+	display:block;
+	border: 2px solid black;
+	background-color:lightblue;
+}
+
+.btn {
+	font-size: 16px;
+	background-color: rgb(0, 38, 73);
+	border: 1px solid rgb(0, 38, 73);
+	color: white;
+	padding: 5px;
+    width: 50%;
+}
+
+.btn:hover {
+	background-color: rgb(124,33,40);
+	
+}
+
+.desc {
+	font-family: "Courier New";
+	font-style: italic;
+	font-weight: bold;
+}
+
+
+</style>
+  
+  
+<style>@media print {#ghostery-tracker-tally {display:none !important}}</style></head>
+
+
+<body data-new-gr-c-s-check-loaded="14.1047.0" data-gr-ext-installed="">
+
+  <h1> Example for HW #3 </h1>
+
+  <p> This web page provides examples that can be modified to help with the last questions in HW #3. Note 
+      the following: </p>
+
+  <ul>
+      <li> The inputs in the first row have ids of "check1" and "num1"; for the second row, these are
+           "check2" and "num2". This allows us to link the checkbox with the numeric input. </li>
+      <li> Clicking a checkbox automatically sets the corresponding numeric input to 23. See the <i> processCheck</i> function. </li>
+      <li> Clicking the button will 'read' the 3rd column and will display an alert showing the names of the items. </li> 
+  </ul>
+
+<h1 class="header"> Welcome to Dr. D's Pizza Paradise </h1>
+<p class="desc"> View your options below and order online </p>
+
+
+<center>
+  <table id="order">
+    
+    <!-- table header -->
+    <tbody><tr><th>Selected</th><th>Quantity</th><th>Item</th><th>More information</th></tr>
+    
+    <!-- -- first row of table ---->
+    <tr>
+      <td> <input type="checkbox" id="check1"> </td>
+      <td> <input type="number" name="num1" id="num1" min="1" max="10" onblur="loseFocus(1)"> </td>
+      <td><p class="reveal">Pizza. With Cheese</p>Cheese pizza</td>
+      <td><a href="https://en.wikipedia.org/wiki/Pizza">More information</a></td>
+    </tr>
+    
+    <!-- -- second row of table ---->
+    <tr>
+      <td> <input type="checkbox" id="check2"></td>
+      <td> <input type="number" name="num2" id="num2" min="1" max="10" onblur="loseFocus(2)"> </td>
+      <td><p class="reveal">Pizza. With Pepperoni</p>Pepperoni pizza</td>
+      <td><a href="https://en.wikipedia.org/wiki/Pizza">More information</a></td>
+    </tr>
+  </tbody></table>
+  <br>
+  <button id="btn_summarize" class="btn">Print items</button>
+  
+  </center>
+  
+  
+  
+  
+<script>
+
+  /********************************************
+   * Add event listeners   
+  ********************************************/
+   
+  // add event listeners for check boxes
+  for (let i = 1; i <= 2; i++) {
+    let id = 'check' + i;
+    document.getElementById(id).addEventListener("click", processCheck);
+  }
+  
+  // add event listener for button
+  document.getElementById('btn_summarize').addEventListener("click", summarize);
+  
+  
+  // Enable/Disable numeric input when the user checks or unchecks a checkbox
+  function processCheck() {
+    
+    let num = this.id.replace('check','num');
+	  let numInput = document.getElementById(num);
+
+    /*
+    if check is checked, 
+      enable numeric input and set value to 1      
+    else 
+      disable numeric input and set value to ""
+    */
+      
+    // remove this when finished
+    numInput.value = 23;  // change num's value to 23 to test
+  }
+  
+  // generate an alert summarizing the order
+  function summarize() {
+       
+    let summary = '';
+	  let table = document.getElementById("order");
+    // table.rows is an HTML collection (similar to an array) of 'tr' elements
+    let headerRow = true;   
+	  for (let row of table.rows) {
+        if (!headerRow) {
+          // row.cells is an HTML collection of 'td' elements; 
+          // cells[2] is the 3rd column, which contains the item
+          summary = summary + row.cells[2].innerText + '\n';          
+        } else {
+          headerRow = false;
+        }
+	  }
+    
+    alert(summary);
+  }
+  
+  </script>
+  
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
