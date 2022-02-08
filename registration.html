@@ -1,70 +1,69 @@
+
 <!DOCTYPE HTML>
 <html>
 <head>
 
-<title> HW #3, Question 1 </title>
-  
+<title> Registration Page</title>
+
 <style>
 
-  div#description {
-    padding: 5px;
-  }
-  
-  button {
-    box-sizing: content-box
-  }
-  
-  
+#login {
+	border: 1px solid black;
+	height: 100px;
+	width: 40%;
+	display:inline-block;
+  position: relative;
+
+}
+	
+#page {
+	background-color:black;
+	color:white;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+label {
+	color:dodgerblue;
+}
+	
 </style>
 
 </head>
 
 <body>
-  
-  <h1 id = "title"> Homework #3, Question 1 </h1>
 
-  <div id = "description">
-     
-    <p>Use JavaScript to change the background color and text color of this div when 
-     a user types a color in the corresponding textbox. In order to do this, you
-     should respond to the <i>onkeyup</i> event for each textbox. </p> 
-    
-     <p>Additionally, allow the user to add a border by clicking the button. You can
-     use a style of your choice, such as "2px solid red", as long as the border is visible</p>
-   
-     <p> Finally, clicking the "Reset" button should reset the styles and inputs to their default values, 
-     which are "white" for the background color and "black" for the font color, with the border style 
-       set to "none". </p>
-  </div>
-  
-  <br>
-  <hr>
+<h1> Please register by completing the information below </h1>
 
-<div class = "color-inputs">
-<label for = "bgcolor">background-color: </label>
-<input type = "text" name="bgcolor" id="bgcolor" value = "white">
-
-</div>
-  
-<div class = "color-inputs">
-<label for = "textcolor">font color: </label>
-<input type = "text" value = "black" name="textcolor" id="textcolor"/>
-</div>
-
-<div class = "color-inputs">
-  <button>Add border </button>
-</div>
-
-<div class = "color-inputs">
-  <button>Reset </button>
+<div id = "login">
+	<label id = "lbl" for = "fname"> First name: </label>
+	<input id = "fname" type = "text" placeholder = "first name">
+	<button id = "btn" onclick = "continue1();"> Continue </button>
+	<div id = "page">Page 1/2</div>
 </div>
 
 
-  <br><br>
+<script>
+"use script";
+var fName;
+var lName;
+	
+// gets intro div by its id, and changes its innerHTML
+function continue1() {
 
+	alert("The button was clicked!");
+	
+}
+	
+
+</script>
 
 </body>
 
 </html>
+
+
+
 
 
