@@ -95,7 +95,10 @@
 //change the background color based on user textbox input
   function changeBGC(){
     let color = document.getElementById("bgcolor").value;
-    document.getElementById("mainBody").style.backgroundColor=color;
+    document.getElementById("description").style.backgroundColor=color;
+
+    //change page background color
+    //document.getElementById("mainBody").style.backgroundColor=color;
   }
 
   //change the font color based on user textbox input
@@ -111,7 +114,8 @@
 
   //reset to default when user click button
   function myReset() {
-    document.getElementById("mainBody").style.backgroundColor="white";
+    document.getElementById("description").style.backgroundColor="white";
+    //document.getElementById("mainBody").style.backgroundColor="white";
     document.getElementById("description").style.color="black";
     document.getElementById("description").style.border="none";
   }

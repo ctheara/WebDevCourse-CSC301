@@ -60,6 +60,7 @@ label {
 var fName;
 var lName;
 
+//help decide which function to run
 function pick(){
 	if (document.getElementById("fname").placeholder== "first name"){
 		continue1();
@@ -69,8 +70,11 @@ function pick(){
 
 // gets intro div by its id, and changes its innerHTML
 function continue1() {
-	 fName = document.getElementById("fname").value;
+	
+	//store user text input
+	fName = document.getElementById("fname").value;
 
+	//alarm if textbox is empty
 	 if (fName.length==0){
 		alert("The button was clicked!");
 	 }
@@ -81,20 +85,28 @@ function continue1() {
 		 document.getElementById('fname').value = "";
 		 //document.write('<p>' + fName + '</p>');
 	 }
-	// document.write('<p>' + lName + '</p>');
 }
 
 function confirmEntry(){
+
+	//store user text input
 	lName = document.getElementById("fname").value;
 
+	//alarm if textbox is empty
 	if (lName.length==0){
-	alert("The button was clicked!");
+		alert("The button was clicked!");
 	}
 	else {
-		document.write('<div id = "login">');
-		document.write('<div>Thank you for registering <span style="font-weight:bold;">' + fName + ' '+ lName + '</span>.</div>');
-		document.write('<div id>Have a great rest of your day!</div>');
-		document.write('</div>');
+		let outString = 'Thank you for registering <span style="font-weight:bold;">' +fName+ ' ' + lName + '</span>.' + 
+			'<br>' + 'Have a great rest of your day!';
+		
+		//change inner HTML and replace with conformation text
+		document.getElementById('login').innerHTML = outString;
+
+		// document.write('<div id = "login">');
+		// document.write('<div>Thank you for registering <span style="font-weight:bold;">' + fName + ' '+ lName + '</span>.</div>');
+		// document.write('<div id>Have a great rest of your day!</div>');
+		// document.write('</div>');
 	}
 }
 	
