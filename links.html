@@ -1,29 +1,47 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<html>
 <head>
-<title> Some useful links </title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<title> Helpful Links </title>
 
 </head>
-<html>
 
 <body>
-<script>
 
-$(document).ready(function(){  
-    alert("Modify the code to complete the assignment");
-}); 
 
-</script>
+    <!-- 
+        use HTML of an empty div, whose innter HTML can be bhange
 
-<h1> Some useful links </h1>
-<p> Mouse over the links below to view the web address: </p>
-<ul>
-    <li> <a href = "http://www.google.com">Google</a></li>
-    <li> <a href = "http://www.easternct.edu">Eastern's Homepage</a></li>
-    <li> <a href = "https://easternct.blackboard.com/">Blackboard log-in</a></li>
-    <li> <a href = "http://www.piazza.com">Piazza</a></li>
-</ul>
+        <div id="results"></div>
 
-<div id = "url" style = "border: solid 1px red; display:none">
+        const classes = ["http://wwww.netflix.com","https://www.disneyplus.com/", "http://www.hulu.com", "https://www.hbomax.com"];
+        let result = ""
+        for (let i = 0; i < myStringArray.length; i++) {
+            result = result + " <a href='" + myStringArray[i] + "'>"+ myStringArray[i] + "</a>";
+        }
+        document.getElementById('results').innerHTML = result -->
 
-</div>
+
+  <script>
+    "use strict";
+
+    //print out a list of links from an array
+    const classes = ["http://www.netflix.com","https://www.disneyplus.com/", "http://www.hulu.com", "https://www.hbomax.com"];
+    document.write('<div class = "js">');
+    document.write('<h1> Streaming Sites </h1>');
+    document.write('<ol>');
+    for (let i = 0; i < classes.length; i++) {
+      //document.write('<li>' + classes[i] + '</li>'); 
+      document.write("<li> <a href='" + classes[i] + "'>"+ classes[i] + "</a>)</li>");
+    }
+    document.write('</ol>');
+    document.write('</div>');
+
+  </script>
+
+
+</body>
+
+</html>
+
+
