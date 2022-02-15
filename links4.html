@@ -10,7 +10,42 @@
 <script>
 
 $(document).ready(function(){  
-    alert("Modify the code to complete the assignment");
+    
+    //change heading color using jQuery
+    $("h1").css('color','red');
+
+
+
+
+    //fuction to display url in div
+    $("ul li:first").mouseenter(function(){
+        $("#url").text("http://www.google.com"); //NOT the best way to do this. hardcoding is bad
+        $("#url").css("display", "block");
+    });
+    $("ul li:nth-last-child(3)" ).mouseenter(function(){
+        //var text = $("ul li:nth-last-child(3)").text();
+        $("#url").text("http://www.easternct.edu");
+        $("#url").css("display", "block");
+    });
+    $("ul li:nth-last-child(2)" ).mouseenter(function(){
+        //var href = $('a').prop('href');
+        $("#url").text("https://easternct.blackboard.com/");
+        $("#url").css("display", "block");
+    });
+    $("ul li:nth-last-child(1)" ).mouseenter(function(){
+        //var href = $(this).attr('href');
+        $("#url").text("http://www.piazza.com");
+        $("#url").css("display", "block");
+    });
+
+
+
+
+    //hides 'url' div when mouseout
+    $("ul li:first, ul li:nth-last-child(3), ul li:nth-last-child(2), ul li:nth-last-child(1)").mouseout(function(){
+        $("#url").css("display", "none");
+        });
+
 }); 
 
 </script>
