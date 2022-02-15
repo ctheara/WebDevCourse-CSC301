@@ -15,7 +15,7 @@
 
   <script>
     $(document).ready(function(){  
-        alert("Document is ready - add jQuery statements to complete the assignment");
+        //alert("Document is ready - add jQuery statements to complete the assignment");
 
     }); 
   </script>
@@ -31,17 +31,89 @@
     
       <p> Follow the directions to add buttons below and complete this assignment </p> <br>
     
+    <!-- Use Bootstrap5 for button styling -->
     <div class="row">
         <div class="col-sm-6">
-            <button type="button" class="btn btn-danger">Click Me</button>
+            <button id = "btn1" type="button"  class="btn btn-danger">Click Me</button>
         </div>
         <div class="col-sm-6">
-            <button type="button" class="btn btn-danger">Click Me</button>
+            <button id = "btn2" type="button"  class="btn btn-danger">Click Me</button>
         </div>
     </div>
+    <br>
+
+    <div class="row">
+      <div class="col-sm-4">
+          <button id = "btn3" type="button" class="btn btn-danger">Click Me</button>
+      </div>
+      <div class="col-sm-4">
+          <button id = "btn4" type="button" class="btn btn-danger">Click Me</button>
+      </div>
+      <div class="col-sm-4">
+        <button id = "btn5" type="button" class="btn btn-danger">Click Me</button>
+    </div>
+    <br>
+    <br>
+
+    <div class="row">
+      <div class="col-sm-12">
+          <button id = "btn6" type="button" class="btn btn-danger">Click Me</button>
+      </div>
+    </div>
+    
   
    <!-- add more row here -->
 
   </div>
+
+  <script>
+    "use strict";
+    
+
+    
+
+    //USING JQUERY
+
+    //function that change button style when button is clicked
+    $(document).ready(function(){
+        //alert('get before');
+        $(":button").click(function(){
+          //alert(this);
+          if (this.className == "btn btn-danger"){
+            $(this).removeClass("btn btn-danger").addClass("btn btn-success");
+          }
+          else {
+            $(this).removeClass("btn btn-success").addClass("btn btn-danger");
+          }
+        });
+      })
+
+
+
+
+    //USING JAVASCRIPT
+
+    // //get array of all buttons
+    // let btns = document.getElementsByTagName('button');
+    // //Event listener for all buttons
+    // for (let b of btns){
+    //   document.getElementById(b.id).addEventListener('click', completeAny);
+    // }
+
+    // //Function that change button style using using JavaScript
+    // function completeAny() {
+    //   if (this.className == "btn btn-danger"){
+    //     document.getElementById(this.id).classList.replace('btn-danger', 'btn-success');
+    //   }
+    //   else {
+    //     document.getElementById(this.id).classList.replace('btn-success', 'btn-danger');
+    //   }
+    // }
+                
+
+      
+    </script>
+
+    
 </body>
 </html>
