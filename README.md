@@ -13,4 +13,9 @@ Learning HTML, CSS, and Javascript
     JS to save value from input box
     JS to change innerHTML
     
+   
+## buttons.html
+    Use a jQuery script to change the button styling when clicked
+    
+    
     
